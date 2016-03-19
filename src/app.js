@@ -1,2 +1,2 @@
 let greeting = 'Hello';
-console.log(`$(greeting) Tomio!`);
+console.log(`${greeting} Tomio!`);
