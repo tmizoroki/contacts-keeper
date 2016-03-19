@@ -1,2 +1,5 @@
-let greeting = 'Hello';
-console.log(`${greeting} Tomio!`);
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App.jsx';
+
+ReactDOM.render(<App />, document.getElementById('container'));
