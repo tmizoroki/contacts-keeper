@@ -1,4 +1,6 @@
+import React from 'react';
+
 const AddContact = (props) =>
-  <Button type="Button">Contacts Keeper</Button>
+  <button type="Button">Contacts Keeper</button>
 
 export default AddContact
