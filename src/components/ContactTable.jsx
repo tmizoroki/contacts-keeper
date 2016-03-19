@@ -14,7 +14,7 @@ const ContactTable = (props) => {
       />
     )  
   );
-  
+
   return (
     <table>
       <thead>
@@ -31,3 +31,5 @@ const ContactTable = (props) => {
     </table>
   );
 }
+
+export default ContactTable;
