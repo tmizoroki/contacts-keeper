@@ -1,8 +1,9 @@
+import React from 'react';
 import ContactRow from './ContactRow.jsx'
 
 const ContactTable = (props) => {
-  let rows = props.contacts.map(contact => 
-    (
+  let rows = props.contacts.map(contact => {
+    return (
       <ContactRow 
         firstName={contact.firstName}
         lastName={contact.lastName}
@@ -12,8 +13,8 @@ const ContactTable = (props) => {
         notes={contact.notes}
         key={contact.phone}
       />
-    )  
-  );
+    );
+  });
 
   return (
     <table>
