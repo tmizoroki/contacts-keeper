@@ -5,12 +5,7 @@ const ContactTable = (props) => {
   let rows = props.contacts.map(contact => {
     return (
       <ContactRow 
-        firstName={contact.firstName}
-        lastName={contact.lastName}
-        dob={contact.dob}
-        phone={contact.phone}
-        email={contact.email}
-        notes={contact.notes}
+        contact={contact}
         key={contact.phone}
       />
     );
