@@ -9,6 +9,6 @@ let expect = chai.expect;
 describe('<App />', () => {
   it('renders a <FilterableContactsTable /> component', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.find(FilterableContactsTable)).to.have.length(1);
+    expect(wrapper.find(FilterableContactsTable)).to.exist;
   });
 });
