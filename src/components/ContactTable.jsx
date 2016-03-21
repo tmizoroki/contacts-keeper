@@ -2,8 +2,12 @@ import React, { PropTypes } from 'react';
 import { Table } from 'react-bootstrap';
 import ContactRow from './ContactRow.jsx';
 
-const ContactTable = ({contacts}) => {
+const ContactTable = ({contacts, filterText}) => {
   let rows = contacts.map(contact => {
+    if (contact.firstName.indexOf(filterText) === -1
+      && contact.lastName.indexOf(filterText) === -1) {
+      return;
+    }
     return (
       <ContactRow 
         contact={contact}
@@ -30,7 +34,8 @@ const ContactTable = ({contacts}) => {
 }
 
 ContactTable.propTypes = {
-  contacts: PropTypes.array.isRequired
+  contacts: PropTypes.array.isRequired,
+  filterText: PropTypes.string
 }
 
 export default ContactTable;
