@@ -1,4 +1,5 @@
 import React from 'react';
+import { Navbar } from 'react-bootstrap';
 import FilterableContactsTable from './FilterableContactsTable.jsx'
 
 class App extends React.Component {
@@ -27,7 +28,22 @@ class App extends React.Component {
     }
 
     render() {
-        return <FilterableContactsTable contacts={this.state.contacts} />;
+      return (
+        <div>
+          <Navbar>
+            <Navbar.Header>
+              <Navbar.Brand>
+                Contacts Keeper
+              </Navbar.Brand>
+            </Navbar.Header>
+          </Navbar>
+
+          <div className='container'>
+            <FilterableContactsTable contacts={this.state.contacts} />
+          </div>
+        </div>
+      )
+
     }
 }
 

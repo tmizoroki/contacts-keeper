@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import ContactRow from './ContactRow.jsx'
+import { Table } from 'react-bootstrap';
+import ContactRow from './ContactRow.jsx';
 
 const ContactTable = ({contacts}) => {
   let rows = contacts.map(contact => {
@@ -12,7 +13,7 @@ const ContactTable = ({contacts}) => {
   });
 
   return (
-    <table>
+    <Table bordered hover>
       <thead>
         <tr>
           <th>First Name</th>
@@ -24,7 +25,7 @@ const ContactTable = ({contacts}) => {
         </tr>
       </thead>
       <tbody>{rows}</tbody>
-    </table>
+    </Table>
   );
 }
 

@@ -12,7 +12,7 @@ class AddContact extends React.Component {
         let save;
 
         return (
-          <div className="modal-container" style={{height: 200}}>
+          <div className="modal-container">
             <Button
               bsStyle="primary"
               bsSize="large"

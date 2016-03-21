@@ -1,15 +1,26 @@
 import React, { PropTypes } from 'react';
-import SearchBar from './SearchBar.jsx'
-import AddContact from './AddContact.jsx'
-import ContactTable from './ContactTable.jsx'
+import { Grid, Row, Col } from 'react-bootstrap';
+import SearchBar from './SearchBar.jsx';
+import AddContact from './AddContact.jsx';
+import ContactTable from './ContactTable.jsx';
 
 const FilterableContactsTable = ({contacts}) => {
   return (
-    <div>
-      <SearchBar />
-      <AddContact />
-      <ContactTable contacts={contacts} />
-    </div>
+    <Grid>
+      <Row className='show-grid'>
+        <Col md={4}>
+          <SearchBar />
+        </Col>
+        <Col md={4} mdPush={6}>
+          <AddContact />
+        </Col>
+      </Row>
+      <Row className='show-grid'>
+        <Col md={12}>
+          <ContactTable contacts={contacts} />
+        </Col>
+      </Row>
+    </Grid>
   );
 }
 
