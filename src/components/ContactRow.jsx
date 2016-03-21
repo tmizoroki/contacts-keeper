@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-const ContactRow = (props) => {
-  const {firstName, lastName, dob, phone, email, notes} = props.contact;
+const ContactRow = ({contact}) => {
+  const {firstName, lastName, dob, phone, email, notes} = contact;
+  
   return (
     <tr>
       <td className="firstName">{firstName}</td>
@@ -12,6 +13,10 @@ const ContactRow = (props) => {
       <td className="notes">{notes}</td>
     </tr>
   );
+}
+
+ContactRow.propTypes = {
+  contact: PropTypes.object.isRequired
 }
 
 export default ContactRow;

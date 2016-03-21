@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ContactRow from './ContactRow.jsx'
 
-const ContactTable = (props) => {
-  let rows = props.contacts.map(contact => {
+const ContactTable = ({contacts}) => {
+  let rows = contacts.map(contact => {
     return (
       <ContactRow 
         contact={contact}
@@ -26,6 +26,10 @@ const ContactTable = (props) => {
       <tbody>{rows}</tbody>
     </table>
   );
+}
+
+ContactTable.propTypes = {
+  contacts: PropTypes.array.isRequired
 }
 
 export default ContactTable;
