@@ -1,15 +1,44 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Button, Modal, Input, ButtonInput } from 'react-bootstrap';
 
 class AddContact extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { show: false };
+        this.state = {
+          show: false,
+          contactForm: {
+            firstName: "",
+            lastName: "",
+            dob: "",
+            phone: "",
+            email: "",
+            notes: ""
+          }
+        };
+    }
+
+    handleChange(e) {
+      let nextState = {};
+      nextState[e.target.name] = e.target.value;
+      this.setState({contactForm: Object.assign(this.state.contactForm, nextState)});
     }
 
     render() {
         let close = () => this.setState({ show:false });
-        let save;
+        let save = () => {
+          this.props.onFormSubmit(this.state.contactForm);
+          this.setState({
+            show: false,
+            contactForm: {
+              firstName: "",
+              lastName: "",
+              dob: "",
+              phone: "",
+              email: "",
+              notes: ""
+            }
+          });
+        }
 
         return (
           <div className="modal-container">
@@ -32,12 +61,48 @@ class AddContact extends React.Component {
               </Modal.Header>
               <Modal.Body>
                 <form>
-                  <Input type="text" label="First Name" placeholder="" />
-                  <Input type="text" label="Last Name" placeholder="" />
-                  <Input type="date" label="Date of Birth" placeholder="" />
-                  <Input type="tel" label="Phone Number" placeholder="" />
-                  <Input type="email" label="Email" placeholder="" />
-                  <Input type="textarea" label="Notes" placeholder="" />
+                  <Input
+                    type="text"
+                    label="First Name"
+                    name="firstName"
+                    value={this.state.contactForm.firstName}
+                    onChange={this.handleChange.bind(this)}
+                  />
+                  <Input
+                    type="text"
+                    label="Last Name"
+                    name="lastName"
+                    value={this.state.contactForm.lastName}
+                    onChange={this.handleChange.bind(this)}
+                  />
+                  <Input
+                    type="date"
+                    label="Date of Birth"
+                    name="dob"
+                    value={this.state.contactForm.dob}
+                    onChange={this.handleChange.bind(this)}
+                  />
+                  <Input
+                    type="tel"
+                    label="Phone Number"
+                    name="phone"
+                    value={this.state.contactForm.phone}
+                    onChange={this.handleChange.bind(this)}
+                  />
+                  <Input
+                    type="email"
+                    label="Email"
+                    name="email"
+                    value={this.state.contactForm.email}
+                    onChange={this.handleChange.bind(this)}
+                  />
+                  <Input
+                    type="textarea"
+                    label="Notes"
+                    name="notes"
+                    value={this.state.contactForm.notes}
+                    onChange={this.handleChange.bind(this)}
+                  />
                 </form>
               </Modal.Body>
               <Modal.Footer>
@@ -47,6 +112,10 @@ class AddContact extends React.Component {
           </div>
         );
     }
+}
+
+AddContact.propTypes = {
+  onFormSubmit: PropTypes.func.isRequired
 }
 
 export default AddContact;
