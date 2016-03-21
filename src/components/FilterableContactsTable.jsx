@@ -5,7 +5,7 @@ import AddContact from './AddContact.jsx';
 import ContactTable from './ContactTable.jsx';
 
 class FilterableContactsTable extends React.Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {
@@ -13,8 +13,8 @@ class FilterableContactsTable extends React.Component {
       contacts: []
     }
   }
-  
-  handleUserInput(filterText) { 
+
+  handleUserInput(filterText) {
     this.setState({
       filterText
     });
