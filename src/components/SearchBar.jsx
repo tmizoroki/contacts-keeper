@@ -1,16 +1,16 @@
 import React, { PropTypes } from 'react';
 import { Input, Glyphicon, Button } from 'react-bootstrap';
 
-const SearchBar = ({filterText, onUserInput}) => {
+const SearchBar = ({textToFilter, filterText}) => {
 
-  let handleChange = e => onUserInput(e.target.value);
+  let handleChange = e => filterText(e.target.value);
 
   return (
     <form className="input-group">
       <Input
         type="text"
         placeholder="Search"
-        value={filterText}
+        value={textToFilter}
         onChange={handleChange}
       />
       <span className="input-group-btn">
@@ -21,8 +21,8 @@ const SearchBar = ({filterText, onUserInput}) => {
 }
 
 SearchBar.propTypes = {
-  filterText: PropTypes.string,
-  onUserInput: PropTypes.func.isRequired
+  textToFilter: PropTypes.string,
+  filterText: PropTypes.func.isRequired
 }
 
 export default SearchBar;

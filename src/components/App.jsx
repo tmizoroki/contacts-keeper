@@ -1,8 +1,9 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { Navbar } from 'react-bootstrap';
-import FilterableContactsTable from './FilterableContactsTable.jsx'
+import FilterableContactsTable from './FilterableContactsTable.jsx';
 
-const App = () =>
+const App = ({ store }) => 
   (
     <div>
       <Navbar>
@@ -12,11 +13,10 @@ const App = () =>
           </Navbar.Brand>
         </Navbar.Header>
       </Navbar>
-
-      <div className='container'>
-        <FilterableContactsTable />
-      </div>
+      <Provider store={store}>
+          <FilterableContactsTable />
+      </Provider>
     </div>
-  )
+  );  
 
 export default App;

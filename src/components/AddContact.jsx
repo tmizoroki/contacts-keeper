@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Button, Modal, Input, ButtonInput } from 'react-bootstrap';
+import { Button, Modal, Input } from 'react-bootstrap';
 
 class AddContact extends React.Component {
     constructor(props) {
@@ -23,22 +23,26 @@ class AddContact extends React.Component {
       this.setState({contactForm: Object.assign(this.state.contactForm, nextState)});
     }
 
-    render() {
-        let close = () => this.setState({ show:false });
-        let save = () => {
-          this.props.onFormSubmit(this.state.contactForm);
-          this.setState({
-            show: false,
-            contactForm: {
-              firstName: "",
-              lastName: "",
-              dob: "",
-              phone: "",
-              email: "",
-              notes: ""
-            }
-          });
+    handleSubmit(e) {
+      const contact = this.state.contactForm;
+      this.props.addContact(contact);
+      this.setState({
+        show: false,
+        contactForm: {
+          firstName: "",
+          lastName: "",
+          dob: "",
+          phone: "",
+          email: "",
+          notes: ""
         }
+      });
+    }
+
+    closeModal() { this.setState({ show: false}); }
+
+    render() {
+        let close = () => this.closeModal();
 
         return (
           <div className="modal-container">
@@ -106,7 +110,7 @@ class AddContact extends React.Component {
                 </form>
               </Modal.Body>
               <Modal.Footer>
-                <Button onClick={save}>Save</Button>
+                <Button onClick={this.handleSubmit.bind(this)}>Save</Button>
               </Modal.Footer>
             </Modal>
           </div>
@@ -115,7 +119,7 @@ class AddContact extends React.Component {
 }
 
 AddContact.propTypes = {
-  onFormSubmit: PropTypes.func.isRequired
+  addContact: PropTypes.func.isRequired
 }
 
 export default AddContact;
