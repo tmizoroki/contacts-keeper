@@ -2,12 +2,21 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: "./src/main.js",
+  devtool: 'eval-source-map',
+  entry: [
+  'webpack-dev-server/client?http://localhost:8080',
+  'webpack/hot/only-dev-server',
+  "./src/main.js",
+  ],
   output: {
     filename: "bundle.js",
     path: path.join(__dirname, 'public'),
     publicPath: '/public/'
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
   module: {
     loaders: [
       {
