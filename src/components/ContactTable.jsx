@@ -18,7 +18,7 @@ const ContactTable = ({contacts, textToFilter}) => {
   });
 
   return (
-    <Table bordered hover>
+    <Table bordered hover className="contact-table">
       <thead>
         <tr>
           <th>First Name</th>

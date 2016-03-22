@@ -6,16 +6,22 @@ import FilterableContactsTable from './FilterableContactsTable.jsx';
 const App = ({ store }) => 
   (
     <div>
-      <Navbar>
-        <Navbar.Header>
-          <Navbar.Brand>
-            Contacts Keeper
-          </Navbar.Brand>
-        </Navbar.Header>
-      </Navbar>
-      <Provider store={store}>
-          <FilterableContactsTable />
-      </Provider>
+      <header>
+        <Navbar>
+          <Navbar.Header>
+            <Navbar.Brand>
+              Contacts Keeper
+            </Navbar.Brand>
+          </Navbar.Header>
+        </Navbar>
+      </header>
+      <div className="container">
+        <Provider store={store}>
+            <FilterableContactsTable />
+        </Provider>
+        <footer>
+        </footer>
+      </div>
     </div>
   );  
 

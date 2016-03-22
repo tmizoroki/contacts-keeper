@@ -9,23 +9,21 @@ import ContactTable from './ContactTable.jsx';
 
 const FilterableContactsTable = ({ contacts, utils, actions }) =>
   (
-    <div className='container'>
-      <Grid>
-        <Row className='show-grid'>
-          <Col md={4}>
-            <SearchBar textToFilter={utils.filterText} filterText={actions.filterContacts} />
-          </Col>
-          <Col md={4} mdPush={6}>
-            <AddContact addContact={actions.addContact} />
-          </Col>
-        </Row>
-        <Row className='show-grid'>
-          <Col md={12}>
-            <ContactTable contacts={contacts} textToFilter={utils.filterText} />
-          </Col>
-        </Row>
-      </Grid>
-    </div>
+    <Grid>
+      <Row className='show-grid table-ui'>
+        <Col md={4}>
+          <SearchBar textToFilter={utils.filterText} filterText={actions.filterContacts} />
+        </Col>
+        <Col md={4} mdPush={6}>
+          <AddContact addContact={actions.addContact} />
+        </Col>
+      </Row>
+      <Row className='show-grid'>
+        <Col md={12}>
+          <ContactTable contacts={contacts} textToFilter={utils.filterText} />
+        </Col>
+      </Row>
+    </Grid>
   );
 
 function mapState(state) {
