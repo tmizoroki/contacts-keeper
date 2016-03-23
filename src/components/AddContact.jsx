@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Button, Modal, Glyphicon, Input, Row, Col } from 'react-bootstrap';
+import { Button, Modal, Input, Row, Col } from 'react-bootstrap';
 
 class AddContact extends React.Component {
     constructor(props) {
@@ -51,7 +51,7 @@ class AddContact extends React.Component {
               onClick={() => this.setState({ show: true})}
               className="add-contact-button"
             >
-              <Glyphicon glyph="plus-sign" />Contacts Keeper
+              <img src="circle.svg"/>Contacts Keeper
             </Button>
 
             <Modal
