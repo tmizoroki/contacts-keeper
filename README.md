@@ -14,3 +14,19 @@ A simple address book web application.
 * Allow user to modify and delete contact entries
 * Authentication
 * Write more unit tests and integration tests.
+
+## Technology Stack
+
+* React
+* Redux
+* Webpack
+* Babel
+* Bootstrap / React-Bootstrap
+
+For Testing:
+
+* Karma
+* Enzyme
+* Mocha
+* Chai
+* Sinon
