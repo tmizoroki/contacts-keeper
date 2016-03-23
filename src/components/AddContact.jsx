@@ -130,7 +130,7 @@ class AddContact extends React.Component {
                 </form>
               </Modal.Body>
               <Modal.Footer>
-                <Button onClick={this.handleSubmit.bind(this)}>Save</Button>
+                <Button onClick={this.handleSubmit.bind(this)} className="save-button">Save</Button>
               </Modal.Footer>
             </Modal>
           </div>
