@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
+  "engines": {
+    "node": "5.2.0"
+  },
   "scripts": {
     "postinstall": "webpack --config ./webpack-production.config.js --progress --colors",
     "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
