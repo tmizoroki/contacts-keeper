@@ -4,7 +4,9 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"
+    "postinstall": "webpack --config ./webpack-production.config.js --progress --colors",
+    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
+    "start": "node server.js"
   },
   "author": "Tomio Mizoroki",
   "license": "ISC",
@@ -23,11 +25,13 @@
     "karma-chrome-launcher": "^0.2.2",
     "karma-mocha": "^0.2.2",
     "karma-phantomjs-launcher": "^1.0.0",
+    "karma-sinon": "^1.0.4",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.4.5",
     "phantomjs-prebuilt": "^2.1.6",
     "redux-devtools": "^3.1.1",
+    "sinon": "^1.17.3",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.14",
