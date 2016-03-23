@@ -11,15 +11,6 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/public/'
   },
-  plugins: [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      compress: {
-        warnings: false
-      }
-    })
-  ],
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
@@ -31,7 +22,7 @@ module.exports = {
       { test: /\.css$/,
         loader: 'style!css',
         include: [
-          path.resolve(__dirname, 'node_modules/bootstrap/dist/css/bootstrap.css'),
+          path.resolve(__dirname, 'node_modules/bootstrap/dist/css/'),
           path.resolve(__dirname, 'styles')
         ] },
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },

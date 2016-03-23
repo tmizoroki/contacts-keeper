@@ -7,7 +7,7 @@
     "node": "5.2.0"
   },
   "scripts": {
-    "postinstall": "webpack --config ./webpack-production.config.js --progress --colors",
+    "postinstall": "webpack --config ./webpack-production.config.js -p --progress --colors",
     "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
     "start": "node server.js"
   },
