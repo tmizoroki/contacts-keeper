@@ -1,4 +1,4 @@
-import { FILTER_CONTACTS } from '../constants/ActionTypes';
+import { FILTER_CONTACTS } from '../constants/actionTypes';
 
 const initialState = {
   filterText: ''
