@@ -5,8 +5,8 @@ import ContactRow from './ContactRow.jsx';
 const ContactTable = ({contacts, textToFilter}) => {
   // Filter out the rows where the first and last names don't match the text in the search bar.
   let rows = contacts.map(contact => {
-    if (contact.firstName.indexOf(textToFilter) === -1
-      && contact.lastName.indexOf(textToFilter) === -1) {
+    if (contact.firstName.toLowerCase().indexOf(textToFilter.toLowerCase()) === -1
+      && contact.lastName.toLowerCase().indexOf(textToFilter.toLowerCase()) === -1) {
       return;
     }
     return (
