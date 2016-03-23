@@ -28,16 +28,13 @@ module.exports = {
       {
         test: /\.css$/, 
         include: [
-          path.resolve(__dirname, 'node_modules/bootstrap/dist/css/'),
           path.resolve(__dirname, 'styles')
         ],
         loader: 'style-loader!css-loader'
       },
       { test:/bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/, loader: 'imports?jQuery=jquery' },
-      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
-      { test: /\.(woff|woff2)$/, loader:"url?prefix=font/&limit=5000" },
-      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
-      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" }
+      { test: /\.(woff2?|svg)$/, loader: 'url?limit=10000' },
+      { test: /\.(ttf|eot)$/, loader: 'file' }
     ]
   },
   externals: {
