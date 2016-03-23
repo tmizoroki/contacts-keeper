@@ -51,7 +51,7 @@ class AddContact extends React.Component {
               onClick={() => this.setState({ show: true})}
               className="add-contact-button"
             >
-              <img src="circle.svg"/>Contacts Keeper
+              <img src="circle.svg" className="plus-icon" />Contacts Keeper
             </Button>
 
             <Modal

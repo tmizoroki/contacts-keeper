@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Input, Glyphicon, Button } from 'react-bootstrap';
+import { Input, Button } from 'react-bootstrap';
 
 const SearchBar = ({textToFilter, filterText}) => {
 
@@ -15,7 +15,7 @@ const SearchBar = ({textToFilter, filterText}) => {
         onChange={handleChange}
       />
       <span className="input-group-btn">
-        <Button><Glyphicon glyph="search" /></Button>
+        <Button><img src="tool.svg" /></Button>
       </span>
     </form>
   )
