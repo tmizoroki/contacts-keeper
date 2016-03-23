@@ -28,7 +28,7 @@ module.exports = {
       {
         test: /\.css$/, 
         include: [
-          path.resolve(__dirname, 'node_modules/bootstrap/dist/css/bootstrap.css'),
+          path.resolve(__dirname, 'node_modules/bootstrap/dist/css/'),
           path.resolve(__dirname, 'styles')
         ],
         loader: 'style-loader!css-loader'
