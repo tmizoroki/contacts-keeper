@@ -26,12 +26,13 @@
   color: white;
 }
 
-.glyphicon-search {
-  color: white;
+.search-icon {
+  height: 20px;
   transform: scaleX(-1);
 }
 
-.glyphicon-plus-sign {
+.plus-icon {
+  height: 13px;
   margin: 0 6px 0 -2px;
 }
 

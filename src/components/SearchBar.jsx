@@ -15,7 +15,7 @@ const SearchBar = ({textToFilter, filterText}) => {
         onChange={handleChange}
       />
       <span className="input-group-btn">
-        <Button><img src="tool.svg" /></Button>
+        <Button><img src="tool.svg" className="search-icon"/></Button>
       </span>
     </form>
   )
